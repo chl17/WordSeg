@@ -6,6 +6,8 @@ Chinese Word Segmentation Using
 
 1. Maximum Matching
 
+1. CRF
+
 1. Bi-LSTM (+ CRF)
 
 1. BERT + Bi-LSTM
@@ -59,6 +61,8 @@ Trained and tested with pku dataset
 1.  `mm_score.bat` for scoring
 
 ### CRF
+
+1. install `CRF++`
 
 1. `crf.py` for preprocess and postprocess
 
