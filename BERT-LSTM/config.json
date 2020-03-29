@@ -1,0 +1,24 @@
+{
+  "train_config": {
+    "model_arch": "bert_lstm",
+    "pretrained_bert": "bert-base-chinese",
+    "output_directory": "checkpoints_bert_lstm_msr",
+    "epochs": 100,
+    "learning_rate": 1e-5,
+    "epochs_per_checkpoint": 1,
+    "batch_size": 16,
+    "seed": 2017010,
+    "checkpoint_path": "",
+    "with_tensorboard": true,
+    "update_bert": false
+  },
+  "data_config": {
+    "train_file": "../Data/train/msr_training.utf8",
+    "test_file": "../Data/gold/msr_test_gold.utf8"
+  },
+  "lstm_config": {
+    "bert_dir": "data/pretrained",
+    "hidden_dim": 512,
+    "n_layers": 2
+  }
+}
