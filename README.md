@@ -38,7 +38,7 @@ Trained and tested with pku dataset
 
 |Structure|Precision|Recall|F1-Score|
 |:-----|:------:|:------:|:------:|
-|emb256_hid256_l3|0.9343|0.9336|0.9339|
+|emb256_hid256_l3|0.9252|0.9237|0.9243|
 
 ### Bi-LSTM + CRF
 
