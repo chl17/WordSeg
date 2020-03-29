@@ -30,7 +30,7 @@ Trained and tested with pku dataset
 
 |Template|Precision|Recall|F1-Score|
 |:-----|:------:|:------:|:------:|
-|crf_template|0.9252|0.9237|0.9243|
+|crf_template|0.938|0.923|0.931|
 
 ### Bi-LSTM
 
