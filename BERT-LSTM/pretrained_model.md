@@ -1,6 +1,6 @@
 # Pretrained Model
 
-Download model files to a directory and rename
+Download model files to a directory (data/pretrained) and rename
 
 ## bert-base-chinese
 

@@ -13,8 +13,8 @@
     "update_bert": false
   },
   "data_config": {
-    "train_file": "../Data/train/msr_training.utf8",
-    "test_file": "../Data/gold/msr_test_gold.utf8"
+    "train_file": "../Data/train/pku_training.utf8",
+    "test_file": "../Data/gold/pku_test_gold.utf8"
   },
   "lstm_config": {
     "bert_dir": "data/pretrained",

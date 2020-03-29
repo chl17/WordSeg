@@ -10,4 +10,4 @@ class TrainingConfig(object):
 class LSTMConfig(object):
     emb_size = 128  # 词向量的维数
     hidden_size = 128  # lstm隐向量的维数
-    n_layers = 2
+    n_layers = 1
