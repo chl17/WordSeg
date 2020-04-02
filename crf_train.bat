@@ -1,1 +1,1 @@
-"CRF++"\crf_learn -f 3 -c 1.0 -p 24 CRF/crf_template_1 CRF/pku_training_tagged.txt CRF/crf_model_1
+"CRF++"\crf_learn -f 3 -c 1.0 -p 24 CRF/crf_template CRF/pku_training_tagged.txt CRF/crf_model
