@@ -2,11 +2,13 @@
 
 ## Introduction
 
+中文分词，使用 最大词匹配、CRF（CRF++）、Bi-LSTM、BERT-Bi-LSTM
+
 Chinese Word Segmentation Using 
 
 1. Maximum Matching
 
-1. CRF
+1. CRF (CRF++)
 
 1. Bi-LSTM (+ CRF)
 

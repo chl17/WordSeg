@@ -2,7 +2,7 @@
   "train_config": {
     "model_arch": "bert_lstm",
     "pretrained_bert": "bert-base-chinese",
-    "output_directory": "checkpoints_bert_lstm_msr",
+    "output_directory": "checkpoints_bert_lstm_pku",
     "epochs": 100,
     "learning_rate": 1e-5,
     "epochs_per_checkpoint": 1,

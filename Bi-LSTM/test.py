@@ -20,33 +20,33 @@ def main():
     dev_word_lists, dev_tag_lists = build_corpus("dev", make_vocab=False)
     test_word_lists, test_tag_lists = build_corpus("test", make_vocab=False)
 
-    # print("加载并评估hmm模型...")
-    # hmm_model = load_model(HMM_MODEL_PATH)
-    # hmm_pred = hmm_model.test(test_word_lists,
-    #                           word2id,
-    #                           tag2id)
-    # metrics = Metrics(test_tag_lists, hmm_pred, remove_O=REMOVE_O)
-    # metrics.report_scores()  # 打印每个标记的精确度、召回率、f1分数
-    # metrics.report_confusion_matrix()  # 打印混淆矩阵
-    #
-    # # 加载并评估CRF模型
-    # print("加载并评估crf模型...")
-    # crf_model = load_model(CRF_MODEL_PATH)
-    # crf_pred = crf_model.test(test_word_lists)
-    # metrics = Metrics(test_tag_lists, crf_pred, remove_O=REMOVE_O)
-    # metrics.report_scores()
-    # metrics.report_confusion_matrix()
-    #
-    # # bilstm模型
-    # print("加载并评估bilstm模型...")
-    # bilstm_word2id, bilstm_tag2id = extend_maps(word2id, tag2id, for_crf=False)
-    # bilstm_model = load_model(BiLSTM_MODEL_PATH)
-    # bilstm_model.model.bilstm.flatten_parameters()  # remove warning
-    # lstm_pred, target_tag_list = bilstm_model.test(test_word_lists, test_tag_lists,
-    #                                                bilstm_word2id, bilstm_tag2id)
-    # metrics = Metrics(target_tag_list, lstm_pred, remove_O=REMOVE_O)
-    # metrics.report_scores()
-    # metrics.report_confusion_matrix()
+    print("加载并评估hmm模型...")
+    hmm_model = load_model(HMM_MODEL_PATH)
+    hmm_pred = hmm_model.test(test_word_lists,
+                              word2id,
+                              tag2id)
+    metrics = Metrics(test_tag_lists, hmm_pred, remove_O=REMOVE_O)
+    metrics.report_scores()  # 打印每个标记的精确度、召回率、f1分数
+    metrics.report_confusion_matrix()  # 打印混淆矩阵
+
+    # 加载并评估CRF模型
+    print("加载并评估crf模型...")
+    crf_model = load_model(CRF_MODEL_PATH)
+    crf_pred = crf_model.test(test_word_lists)
+    metrics = Metrics(test_tag_lists, crf_pred, remove_O=REMOVE_O)
+    metrics.report_scores()
+    metrics.report_confusion_matrix()
+
+    # bilstm模型
+    print("加载并评估bilstm模型...")
+    bilstm_word2id, bilstm_tag2id = extend_maps(word2id, tag2id, for_crf=False)
+    bilstm_model = load_model(BiLSTM_MODEL_PATH)
+    bilstm_model.model.bilstm.flatten_parameters()  # remove warning
+    lstm_pred, target_tag_list = bilstm_model.test(test_word_lists, test_tag_lists,
+                                                   bilstm_word2id, bilstm_tag2id)
+    metrics = Metrics(target_tag_list, lstm_pred, remove_O=REMOVE_O)
+    metrics.report_scores()
+    metrics.report_confusion_matrix()
 
     print("加载并评估bilstm+crf模型...")
     crf_word2id, crf_tag2id = extend_maps(word2id, tag2id, for_crf=True)
@@ -61,10 +61,10 @@ def main():
     metrics.report_scores()
     metrics.report_confusion_matrix()
 
-    # ensemble_evaluate(
-    #     [hmm_pred, crf_pred, lstm_pred, lstmcrf_pred],
-    #     test_tag_lists
-    # )
+    ensemble_evaluate(
+        [hmm_pred, crf_pred, lstm_pred, lstmcrf_pred],
+        test_tag_lists
+    )
 
 
 if __name__ == "__main__":
